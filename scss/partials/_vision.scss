@@ -1,0 +1,141 @@
+             .vision {
+                 display: flex;
+                 flex-direction: column;
+                 padding: 0em 0 2em 0;
+                 .vision-container {
+                     margin: -5em 2.5em;
+                     @include container {
+                         width: 1140px;
+                         margin: 0 auto;
+                     }
+                     .vision-title {
+                         @include title ($color: $n-title, $lh: 1em);
+                         margin-bottom: 1em;
+                         &::before {
+                             content: '';
+                             display: block;
+                             border-left: 1px solid $n-title;
+                             padding-top: 9em;
+                             margin-bottom: .5em;
+                             height: 50%;
+                             @include middle {
+                                 padding-top: 3em;
+                             }
+                         }
+                         @include tablet {
+                             @include title ($fs: 2.2rem, $color: $n-title, $lh: 1em);
+                         }
+                     }
+                     .vision-text {
+                         margin-bottom: 5em;
+                         font-style: italic;
+                     }
+                 }
+                 .vision-img-left {
+                     display: block;
+                     object-fit: cover;
+                     background-size: cover;
+                     margin-bottom: .5em;
+                     &::after {
+                         content: '';
+                         display: block;
+                         padding: 3rem 0;
+                         margin-top: -5em;
+                         margin-right: auto;
+                         margin-left: -2em;
+                         border-bottom: 0.8rem solid #00b4d8;
+                         border-left: 0.8rem solid #00b4d8;
+                         width: 27%;
+                         @include middle {
+                             margin-left: 0em;
+                         }
+                     }
+                 }
+                 .vision-content-middle {
+                     padding: 3em 0 3em 0;
+                     @include middle {
+                         padding: 0;
+                     }
+                     .vision-content-title {
+                         @include title ($fs: 1.2em, $color: $n-title);
+                         padding-bottom: 1em;
+                     }
+                     p {
+                         text-align: left;
+                         line-height: 1.6em;
+                     }
+                     .vision-content-desc {
+                         padding-bottom: 2em;
+                     }
+                 }
+                 .vision-img-up {
+                     display: block;
+                     object-fit: cover;
+                     max-height: 57%;
+                 }
+                 .vision-img-down {
+                     position: relative;
+                     margin-left: auto;
+                     display: block;
+                     object-fit: cover;
+                     background-size: cover;
+                     margin-top: 1em;
+                     max-width: 25em;
+                     &::before {
+                         content: '';
+                         display: block;
+                         position: absolute;
+                         top: 0em;
+                         left: 5em;
+                         right: 1em;
+                         bottom: 2em;
+                         border-top: 0.9rem solid #00b4d8;
+                         border-right: 0.9rem solid #00b4d8;
+                     }
+                     @include middle {
+                         margin-top: 9em;
+                         @include big {
+                             margin-top: 0em;
+                         }
+                     }
+                 }
+             }
+             
+             @supports (display: grid) {
+                 @include middle {
+                     .vision-content {
+                         display: grid;
+                         grid-template-columns: minmax(10em, 23.5em) minmax(4em, 23.5em);
+                         @include big {
+                             grid-template-columns: minmax(4em, auto) minmax(4em, auto) minmax(4em, auto);
+                             grid-template-rows: repeat(2, 20em);
+                             grid-column-gap: 2em;
+                             margin-bottom: 1em;
+                         }
+                     }
+                     .img-left {
+                         display: block;
+                         object-fit: cover;
+                         width: 74%;
+                         height: 30em;
+                         min-width: 20em;
+                         margin-left: 1.5em;
+                         grid-column: 1/2;
+                         @include big {
+                             width: 90%;
+                             height: 26em;
+                             min-width: 17em;
+                         }
+                     }
+                 }
+                 @include big {
+                     .vision-img-down {
+                         grid-column: 3 / 4;
+                         grid-row: 2 /3;
+                     }
+                     .vision-img-up {
+                         width: 20em;
+                         min-height: 17em;
+                     }
+                 }
+             }

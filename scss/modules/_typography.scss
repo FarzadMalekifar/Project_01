@@ -1,0 +1,36 @@
+    @import url('https://fonts.googleapis.com/css?family=Roboto|Open+Sans:200,300,400,700,800,900&amp;subset=latin');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+    $ff-r:'Roboto';
+    $ff-m:'Montserrat';
+    $ff-o:'Open Sans',
+    sans-serif;
+    $ff-200:200;
+    $ff-300:300;
+    $ff-400:400;
+    $ff-700:700;
+    $ff-800:800;
+    $ff-900:900;
+    @mixin title ($fs:1.5em,
+    $color:$accent-title,
+    $lh:1.8em) {
+        font-size: $fs;
+        font-weight: $ff-700;
+        color: $color;
+        font-family: $ff-m;
+        text-transform: uppercase;
+        line-height: $lh;
+    }
+    
+    @mixin sans-serif($fs,
+    $ls: .25em,
+    $color: $dark-gray,
+    $tt: uppercase,
+    $lh: 1) {
+        font-size: $fs;
+        letter-spacing: $ls;
+        color: $color;
+        text-transform: $tt;
+        line-height: $lh;
+        font-family: $ff-ss;
+        font-weight: $fw-n;
+    }

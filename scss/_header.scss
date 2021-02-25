@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    .header-logo {
+        font-size: $ff-o;
+        h1 {
+            width: 40%;
+            margin: 1em 1.5em;
+            font-family: $ff-m;
+            font-size: 1.8em;
+        }
+        &::after {
+            content: '';
+            display: block;
+            height: .2px;
+            width: 100%;
+            background: rgba($color: #000000, $alpha: 0.5)
+        }
+    }
+    .header-content {
+        margin: 2em 3em;
+    }
+    h2 {
+        color: $accent;
+        font-size: 4em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    h3 {
+        margin-top: .5em;
+        line-height: 1.8em;
+    }
+    p {
+        line-height: 1.8em;
+    }
+    .header-img {
+        width: 100%;
+    }
+    span {
+        display: block;
+        font-family: $ff-m;
+        text-transform: uppercase;
+        font-size: 3em;
+        text-align: right;
+        padding: 1em 0;
+    }
+}
+
+//display: grid;
+//grid-template-rows: minmax(4em, 1fr) minmax(4em, 1fr) minmax(2em, 1fr) minmax(8em, 4fr);

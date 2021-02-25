@@ -1,0 +1,135 @@
+    .work {
+        display: flex;
+        flex-direction: column;
+        padding: 4em 3em;
+        @include container {
+            width: 1140px;
+            margin: 0 auto;
+        }
+        .work-title {
+            @include title($fs: 2.3em, $color: $n-title);
+            text-align: left;
+        }
+        .work-desc {
+            font-size: .98em;
+            font-weight: $ff-400;
+            padding: 1.8em 0;
+            font-style: italic;
+            line-height: 1.6em;
+        }
+    }
+    
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2em;
+        figcaption {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background: rgba($color: $accent-title, $alpha: .6);
+            line-height: 2.5em;
+            top: 110%;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 1em;
+            transition: top ease-in-out 250ms;
+        }
+        &:hover figcaption,
+        &:focus figcaption {
+            top: 0;
+        }
+    }
+    
+    .portfolio-image {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+        max-height: 25em;
+    }
+    
+    .portfolio-image6 {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+    }
+    
+    .portfolio-title {
+        font-family: $ff-m;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        color: $background;
+    }
+    
+    .portfolio-desc {
+        font-family: $ff-o;
+        color: $background;
+        margin-top: 1em;
+        font-size: .98em;
+        font-weight: $ff-400;
+    }
+    
+    .portfolio-link {
+        font-family: $ff-m;
+        color: $background;
+        font-size: 1em;
+        margin-top: auto;
+    }
+    
+    @supports (display: grid) {
+        @include middle {
+            .portfolio-items {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                grid-template-rows: repeat(3, 16em);
+                grid-column-gap: 2em;
+                grid-row-gap: 2em;
+            }
+            .portfolio-item {
+                margin-bottom: 0;
+            }
+            .image1,
+            .image2,
+            .image3 {
+                object-fit: cover;
+                width: 100%;
+                height: 16em;
+            }
+            .image6 {
+                grid-column: 2 / 4;
+                grid-row: 2 / 4;
+            }
+            .image61 {
+                object-fit: cover;
+                width: 100%;
+                height: 34em;
+            }
+            .image4 {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            .image41 {
+                object-fit: cover;
+                width: 100%;
+                height: 16em;
+            }
+            .image5 {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+            .image51 {
+                object-fit: cover;
+                width: 100%;
+                height: 16em;
+            }
+        }
+    }
+    
+    @include big {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(2, 15em);
+    }

@@ -1,0 +1,71 @@
+.menu-button {
+    position: fixed;
+    width: 5em;
+    height: 5em;
+    top: 1em;
+    right: -2em;
+    margin: auto 3.5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    z-index: 2;
+    @include middle {
+        position: absolute;
+        top: 1em;
+        right: -2em;
+    }
+}
+
+.close {
+    width: 2.2em;
+    height: 2.2em;
+    margin-top: 2em;
+    margin-left: 12em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 15em;
+    height: 100vh;
+    background: #000;
+    opacity: .95;
+    z-index: 1;
+    transition: all ease-out 400ms;
+}
+
+nav ul {
+    margin: 3em 0;
+    padding: 0;
+    height: 100vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+nav {
+    li,
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .5em 0;
+    }
+}
+
+nav a {
+    @include title ($fs: 1.2em, $color: $background);
+    text-decoration: none;
+}
+
+.nav-is-open {
+    left: 0;
+}
